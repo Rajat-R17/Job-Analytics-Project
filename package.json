@@ -1,0 +1,13 @@
+{
+  "name": "job-market-analytics",
+  "version": "1.0.0",
+  "description": "Job Market Analytics Platform",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "test": "cd backend && npm test",
+    "install:backend": "cd backend && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
