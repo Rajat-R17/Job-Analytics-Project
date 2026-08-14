@@ -1,0 +1,220 @@
+/* =========================================================
+   CITIES.CSS
+   Cities Intelligence Page Styling
+
+   Includes:
+   - Hero section
+   - KPI cards
+   - Main cities chart
+   - Advanced city insights
+   - Comparison charts
+   - Smart city insights
+   - Responsive design
+   - Premium page polish
+========================================================= */
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+/*
+  Main banner section for
+  Cities Intelligence page
+*/
+.cities-hero {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+
+  padding: 40px;
+  border-radius: 28px;
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.14);
+}
+
+.cities-hero-left {
+  flex: 1;
+}
+
+/*
+  Main heading
+*/
+.cities-hero-left h1 {
+  font-size: 34px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+/*
+  Supporting paragraph
+*/
+.cities-hero-left p {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 700px;
+  opacity: 0.95;
+}
+
+
+/* =========================================================
+   KPI GRID
+========================================================= */
+
+/*
+  Cities page KPI cards:
+  - Top city
+  - Total city jobs
+  - Best average salary
+  - Fastest growing city
+*/
+.cities-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT GRID
+========================================================= */
+
+/*
+  Used for:
+  - Top Hiring Cities
+  - City Intelligence
+*/
+.cities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   SMART INSIGHT BOX
+========================================================= */
+
+/*
+  Full-width City Intelligence box
+  with proper spacing and readability
+*/
+.chart-box.full-width {
+  padding: 32px;
+}
+
+.cities-insight-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  margin-top: 20px;
+  padding: 32px;
+
+  font-size: 18px;
+  line-height: 2.2;
+  color: #334155;
+
+  min-height: 280px;
+}
+
+
+/* =========================================================
+   ADVANCED CITIES SECTION
+========================================================= */
+
+/*
+  Additional advanced city insights
+*/
+.cities-activity-section {
+  margin-top: 35px;
+}
+
+
+/* =========================================================
+   CITY COMPARISON GRID
+========================================================= */
+
+/*
+  Two-chart layout:
+  - Demand vs Salary
+  - Metro vs Emerging hubs
+*/
+.cities-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1100px) {
+  /*
+    Tablet layout
+  */
+  .cities-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cities-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /*
+    Mobile layout
+  */
+  .cities-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cities-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cities-hero-left h1 {
+    font-size: 28px;
+  }
+
+  .cities-insight-box {
+    padding: 24px;
+    line-height: 2;
+  }
+}
+
+
+/* =========================================================
+   PREMIUM PAGE POLISH
+========================================================= */
+
+/*
+  Smooth page entry animation
+*/
+.cities-hero,
+.cities-kpi-grid .kpi-card,
+.cities-grid .chart-box,
+.cities-comparison-grid .chart-box {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+/*
+  Hover lift effect
+*/
+.cities-grid .chart-box:hover,
+.cities-comparison-grid .chart-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,208 @@
+<!-- =========================================================
+     COMPARATOR.HTML
+     Market Comparator Page
+
+     Includes:
+     - Sidebar navigation
+     - Page heading
+     - City comparison filters
+     - KPI comparison cards
+     - Jobs + Salary comparison charts
+     - Competitiveness radar chart
+     - Smart comparison summary
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Market Comparator | Job Analytics</title>
+
+  <!-- Chart.js for charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Shared global styles -->
+  <link rel="stylesheet" href="css/common.css">
+
+  <!-- Comparator page styles -->
+  <link rel="stylesheet" href="css/comparator.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       MAIN DASHBOARD LAYOUT
+  ====================================================== -->
+  <div class="dashboard-layout">
+
+    <!-- ===================================================
+         SIDEBAR NAVIGATION
+    ==================================================== -->
+    <aside class="sidebar">
+
+      <!-- Project Logo -->
+      <div class="logo">
+        📊 Job Analytics
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="skills.html">Skills</a>
+        <a href="cities.html">Cities</a>
+        <a href="salary.html">Salary</a>
+        <a href="comparator.html" class="active">Comparator</a>
+        <a href="filters.html">Search</a>
+      </nav>
+
+      <!-- Secure Logout -->
+      <button id="logoutBtn" class="sidebar-logout">
+        Logout
+      </button>
+
+    </aside>
+
+
+    <!-- ===================================================
+         MAIN CONTENT PANEL
+    ==================================================== -->
+    <main class="main-panel">
+
+      <!-- =================================================
+           PAGE HEADER
+      ================================================== -->
+      <section class="page-header">
+
+        <div>
+          <p class="breadcrumb">
+            Analytics / Comparator
+          </p>
+
+          <h1>
+            Market Comparator
+          </h1>
+
+          <p class="subtitle">
+            Compare two cities using real hiring demand,
+            salary intelligence, top skills and recruiter
+            insights from the jobs dataset.
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           COMPARISON FILTERS
+      ================================================== -->
+      <section class="compare-filters">
+
+        <!-- First City -->
+        <select
+          id="cityA"
+          class="compare-select">
+        </select>
+
+        <!-- Second City -->
+        <select
+          id="cityB"
+          class="compare-select">
+        </select>
+
+        <!-- Compare Button -->
+        <button id="compareBtn">
+          Compare
+        </button>
+
+      </section>
+
+
+      <!-- =================================================
+           KPI COMPARISON CARDS
+      ================================================== -->
+      <section class="compare-kpis">
+
+        <div class="compare-card">
+          <h3>Total Jobs</h3>
+          <p id="totalJobsCompare">
+            Loading...
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <h3>Average Salary</h3>
+          <p id="avgSalaryCompare">
+            Loading...
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <h3>Top Skill</h3>
+          <p id="topSkillCompare">
+            Loading...
+          </p>
+        </div>
+
+        <div class="compare-card">
+          <h3>Top Company</h3>
+          <p id="topCompanyCompare">
+            Loading...
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           CHART SECTION
+      ================================================== -->
+      <section class="chart-grid">
+
+        <!-- Jobs + Salary Comparison -->
+        <div class="chart-box large">
+          <h3>Jobs + Salary Comparison</h3>
+          <canvas id="comparisonChart"></canvas>
+        </div>
+
+        <!-- Salary Band Comparison -->
+        <div class="chart-box">
+          <h3>Salary Band Comparison</h3>
+          <canvas id="salaryCompareChart"></canvas>
+        </div>
+
+        <!-- Competitiveness Radar Chart -->
+        <div class="chart-box large">
+          <h3>Overall Competitiveness Score</h3>
+          <canvas id="competitivenessRadarChart"></canvas>
+        </div>
+
+        <!-- Smart Comparison Summary -->
+        <div class="chart-box full-width">
+          <h3>Smart Comparison Summary</h3>
+
+          <div
+            id="comparisonInsight"
+            class="insight-card">
+
+            Loading comparison insights...
+
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/config.js"></script>
+  <script src="auth.js"></script>
+  <script src="js/comparator.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!-- =========================================================
+     INDEX.HTML
+     Main Dashboard Page
+
+     Includes:
+     - Sidebar navigation
+     - Hero welcome section
+     - KPI cards
+     - Dashboard charts
+     - India hiring heatmap
+     - Smart market summary
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Job Market Analytics Dashboard</title>
+
+  <!-- Chart.js for dashboard visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Shared global styling -->
+  <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       MAIN LAYOUT
+       Sidebar + Main Dashboard Panel
+  ====================================================== -->
+  <div class="dashboard-layout">
+
+    <!-- =====================================================
+     SIDEBAR NAVIGATION
+===================================================== -->
+    <aside class="sidebar">
+
+      <!-- Project Logo -->
+      <div class="logo">
+        📊 Job Analytics
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="skills.html">Skills</a>
+        <a href="cities.html">Cities</a>
+        <a href="salary.html">Salary</a>
+        <a href="comparator.html">Comparator</a>
+        <a href="filters.html">Search</a>
+      </nav>
+
+      <!-- Secure Logout -->
+      <button id="logoutBtn" class="sidebar-logout">
+        Logout
+      </button>
+
+    </aside>
+
+    <!-- =====================================================
+         MAIN CONTENT PANEL
+    ====================================================== -->
+    <main class="main-panel">
+
+      <!-- ===================================================
+           HERO SECTION
+           Welcome + Live Time
+      ==================================================== -->
+      <section class="hero-section">
+
+        <!-- Left Side: Welcome Content -->
+        <div class="hero-left">
+
+          <h1 id="welcomeText">
+            Welcome back 👋
+          </h1>
+
+          <p>
+            Monitor hiring demand, salary intelligence,
+            top skills, company hiring trends and
+            city-wise job analytics through real-time
+            market insights.
+          </p>
+
+        </div>
+
+        <!-- Right Side: Live Date + Location -->
+        <div class="hero-time-box">
+          <h3 id="liveDate"></h3>
+          <span class="time-location">
+            India • IST
+          </span>
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           KPI CARDS
+      ==================================================== -->
+      <section class="kpi-grid">
+
+        <div class="kpi-card">
+          <p>Total Jobs</p>
+          <h2 id="totalJobs">0</h2>
+        </div>
+
+        <div class="kpi-card">
+          <p>Top Skill</p>
+          <h2 id="topSkill">Loading...</h2>
+        </div>
+
+        <div class="kpi-card">
+          <p>Top Hiring State</p>
+          <h2 id="topCity">Loading...</h2>
+        </div>
+
+        <div class="kpi-card">
+          <p>Avg Salary</p>
+          <h2 id="avgSalary">₹0</h2>
+        </div>
+
+        <div class="kpi-card">
+          <p>Top Company</p>
+          <h2 id="topCompany">Loading...</h2>
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           CHART SECTION
+      ==================================================== -->
+      <section class="chart-grid">
+
+        <!-- Top Skills Demand -->
+        <div class="chart-box large">
+          <h3>Top Skills Demand</h3>
+          <canvas id="skillsChart"></canvas>
+        </div>
+
+        <!-- Salary Distribution -->
+        <div class="chart-box">
+          <h3>Salary Distribution</h3>
+
+          <div class="salary-chart-box">
+            <canvas id="salaryChart"></canvas>
+          </div>
+        </div>
+
+        <!-- India State Heatmap -->
+        <div class="chart-box">
+          <h3>India State-wise Hiring Demand</h3>
+
+          <div id="indiaMap" style="width: 100%; height: 420px;">
+          </div>
+        </div>
+
+        <!-- Top Companies -->
+        <div class="chart-box">
+          <h3>Top Companies</h3>
+          <canvas id="companiesChart"></canvas>
+        </div>
+
+        <!-- Experience Levels -->
+        <div class="chart-box">
+          <h3>Experience Levels</h3>
+          <canvas id="experienceChart"></canvas>
+        </div>
+
+        <!-- Smart AI Summary -->
+        <div class="chart-box full-width">
+          <h3>Smart Market Summary</h3>
+
+          <div id="insightCard" class="insight-card">
+
+            Loading smart insights...
+
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- Google Charts (India Heatmap) -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Global Config & Auth Module -->
+  <script src="js/config.js"></script>
+  <script src="auth.js"></script>
+
+  <!-- Main Dashboard JS -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
