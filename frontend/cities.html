@@ -1,0 +1,203 @@
+<!-- =========================================================
+     CITIES.HTML
+     Cities Intelligence Dashboard Page
+
+     Includes:
+     - Sidebar navigation
+     - Topbar live date/time
+     - Hero section
+     - KPI cards
+     - Top hiring cities chart
+     - Advanced city insights
+     - Smart city insights
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cities Intelligence</title>
+
+    <!-- Shared global styles -->
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- Cities page styles -->
+    <link rel="stylesheet" href="css/cities.css">
+
+    <!-- Chart.js for all city charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- =============================================
+             SIDEBAR
+        ============================================== -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                📊 Job Analytics
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="skills.html">Skills</a>
+                <a href="cities.html" class="active">Cities</a>
+                <a href="salary.html">Salary</a>
+                <a href="comparator.html">Comparator</a>
+                <a href="filters.html">Search</a>
+            </nav>
+
+            <button id="logoutBtn" class="sidebar-logout">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- =============================================
+             MAIN PANEL
+        ============================================== -->
+        <main class="main-panel">
+
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="topbar-right">
+                    <span id="liveDate"></span>
+                </div>
+            </header>
+
+
+            <!-- =============================================
+                 HERO SECTION
+            ============================================== -->
+            <section class="cities-hero">
+
+                <div class="cities-hero-left">
+
+                    <h1>
+                        📍 Cities Intelligence Dashboard
+                    </h1>
+
+                    <p>
+                        Explore top hiring cities, salary hotspots,
+                        regional demand and advanced market trends
+                        using real job analytics.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 KPI CARDS
+            ============================================== -->
+            <section class="cities-kpi-grid">
+
+                <div class="kpi-card">
+                    <p>Top City</p>
+                    <h2 id="topCity">Loading...</h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Total City Jobs</p>
+                    <h2 id="totalCityJobs">0</h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Best Avg Salary</p>
+                    <h2 id="cityAvgSalary">₹0</h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Fastest Growing City</p>
+                    <h2 id="growthCity">Loading...</h2>
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 MAIN GRID
+            ============================================== -->
+            <section class="cities-grid">
+
+                <!-- Top Hiring Cities -->
+                <div class="chart-box large">
+                    <h3>Top Hiring Cities</h3>
+                    <canvas id="citiesChart"></canvas>
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 ADVANCED CITY INSIGHTS
+                 (Moved Above City Intelligence)
+            ============================================== -->
+            <section class="cities-activity-section">
+
+                <div class="activity-header">
+                    <h2>Advanced City Insights</h2>
+                    <p>
+                        Regional hiring intelligence and
+                        growth hotspot comparison
+                    </p>
+                </div>
+
+                <section class="cities-comparison-grid">
+
+                    <div class="chart-box">
+                        <h3>City Demand vs Salary Comparison</h3>
+                        <canvas id="cityComparisonChart"></canvas>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Metro vs Emerging Tech Hubs</h3>
+                        <canvas id="cityGrowthChart"></canvas>
+                    </div>
+
+                </section>
+
+            </section>
+
+
+            <!-- =============================================
+                 CITY INTELLIGENCE
+                 (Now Below Advanced Insights)
+            ============================================== -->
+            <section class="cities-grid">
+
+                <div class="chart-box full-width">
+
+                    <h3>City Intelligence</h3>
+
+                    <div
+                        id="cityInsight"
+                        class="cities-insight-box">
+
+                        Loading insights...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="auth.js"></script>
+    <script src="js/cities.js"></script>
+
+</body>
+</html>

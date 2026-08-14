@@ -1,0 +1,224 @@
+/* =========================================================
+   COMPARATOR.CSS
+   Market Comparator Page Styling
+
+   Includes:
+   - Page header
+   - Comparison filters
+   - KPI comparison cards
+   - Chart sizing
+   - Responsive layout
+========================================================= */
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+/*
+  Top heading section:
+  breadcrumb + title + subtitle
+*/
+.page-header {
+  margin-bottom: 30px;
+}
+
+/*
+  Small breadcrumb path
+*/
+.breadcrumb {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+/*
+  Main page title
+*/
+.page-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/*
+  Supporting subtitle text
+*/
+.subtitle {
+  font-size: 17px;
+  color: #64748b;
+  max-width: 760px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FILTER SECTION
+========================================================= */
+
+/*
+  Top comparison filters:
+  City A + City B + Compare button
+*/
+.compare-filters {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  background: white;
+  padding: 22px;
+  border-radius: 22px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  border: 1px solid #edf2f7;
+}
+
+/*
+  Dropdown select fields
+*/
+.compare-select {
+  flex: 1;
+  padding: 14px 16px;
+
+  border: 1px solid #dbe3ec;
+  border-radius: 14px;
+
+  font-size: 15px;
+  outline: none;
+  background: white;
+}
+
+/*
+  Compare action button
+*/
+#compareBtn {
+  border: none;
+  background: #0f172a;
+  color: white;
+
+  padding: 14px 24px;
+  border-radius: 14px;
+
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#compareBtn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   KPI COMPARISON CARDS
+========================================================= */
+
+/*
+  Grid layout for KPI cards
+*/
+.compare-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+/*
+  Individual KPI card
+*/
+.compare-card {
+  background: white;
+  padding: 28px;
+
+  border-radius: 22px;
+  border: 1px solid #edf2f7;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.compare-card:hover {
+  transform: translateY(-6px);
+}
+
+/*
+  KPI title
+*/
+.compare-card h3 {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+/*
+  KPI values
+*/
+.compare-card p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+
+  line-height: 1.7;
+  white-space: normal;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   CHART AREA
+========================================================= */
+
+/*
+  Shared canvas sizing for:
+  - comparison chart
+  - salary comparison
+  - radar chart
+*/
+.chart-box canvas {
+  width: 100% !important;
+  height: 380px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1100px) {
+  /*
+    Tablet view:
+    2 KPI columns
+  */
+  .compare-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*
+    Filters stack vertically
+  */
+  .compare-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  /*
+    Mobile view:
+    single KPI column
+  */
+  .compare-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+    Smaller main title
+  */
+  .page-header h1 {
+    font-size: 36px;
+  }
+}

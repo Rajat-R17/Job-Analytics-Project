@@ -1,0 +1,190 @@
+<!-- =========================================================
+     SALARY.HTML
+     Salary Intelligence Dashboard Page
+
+     Includes:
+     - Sidebar navigation
+     - Topbar live date/time
+     - Hero section
+     - Salary KPI cards
+     - Experience vs Salary bubble chart
+     - Smart salary insights
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salary Intelligence</title>
+
+    <!-- Shared global styles -->
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- Salary page styles -->
+    <link rel="stylesheet" href="css/salary.css">
+
+    <!-- Chart.js for Bubble Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MAIN DASHBOARD LAYOUT
+    ====================================================== -->
+    <div class="dashboard-layout">
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+        <aside class="sidebar">
+
+            <!-- Project Logo -->
+            <div class="logo">
+                📊 Job Analytics
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav">
+                <a href="index.html">Dashboard</a>
+                <a href="skills.html">Skills</a>
+                <a href="cities.html">Cities</a>
+                <a href="salary.html" class="active">Salary</a>
+                <a href="comparator.html">Comparator</a>
+                <a href="filters.html">Search</a>
+            </nav>
+
+            <!-- Secure Logout -->
+            <button id="logoutBtn" class="sidebar-logout">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT PANEL
+        ================================================== -->
+        <main class="main-panel">
+
+            <!-- =============================================
+                 TOPBAR
+                 Live system date + time
+            ============================================== -->
+            <header class="topbar">
+                <div class="topbar-right">
+                    <span id="liveDate"></span>
+                </div>
+            </header>
+
+
+            <!-- =============================================
+                 HERO SECTION
+            ============================================== -->
+            <section class="salary-hero">
+
+                <div class="salary-hero-left">
+
+                    <h1>
+                        💰 Salary Intelligence Dashboard
+                    </h1>
+
+                    <p>
+                        Analyze salary ranges, experience-based
+                        compensation, top paying cities, and
+                        premium career growth opportunities
+                        using real job market data from the
+                        uploaded dataset.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 KPI CARDS
+            ============================================== -->
+            <section class="salary-kpi-grid">
+
+                <div class="kpi-card">
+                    <p>Highest Salary Range</p>
+                    <h2 id="topSalaryRange">
+                        Loading...
+                    </h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Best Paying Skill</p>
+                    <h2 id="bestSkill">
+                        Loading...
+                    </h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Top Salary City</p>
+                    <h2 id="salaryCity">
+                        Loading...
+                    </h2>
+                </div>
+
+                <div class="kpi-card">
+                    <p>Top Paying Experience Band</p>
+                    <h2 id="topRole">
+                        Loading...
+                    </h2>
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 MAIN SALARY GRID
+            ============================================== -->
+            <section class="salary-grid">
+
+                <!-- Bubble Chart -->
+                <div class="chart-box large">
+
+                    <h3>
+                        Experience vs Salary Bubble Intelligence
+                    </h3>
+
+                    <canvas id="salaryBubbleChart"></canvas>
+
+                </div>
+
+
+                <!-- Smart Salary Insights -->
+                <div class="chart-box">
+
+                    <h3>
+                        Salary Insights
+                    </h3>
+
+                    <div
+                        id="salaryInsight"
+                        class="salary-insight-box">
+
+                        Loading salary insights...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="auth.js"></script>
+    <script src="js/salary.js"></script>
+
+</body>
+</html>
