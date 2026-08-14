@@ -871,10 +871,9 @@ Add your preferred open-source license here if required.
 
 # 👩‍💻 Author
 
-**Aastha Yadav**
+**Rajat Raturi**
 
-B.Tech — Computer Science Engineering
-Specialization: Data Science & Machine Learning
+BCA Specialization in AI & DS
 
 ---
 
