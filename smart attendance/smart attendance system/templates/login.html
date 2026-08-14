@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="glass-card auth-card">
+    <div class="card-header">
+      <h1>Welcome Back</h1>
+      <p>Login to continue to your dashboard.</p>
+    </div>
+
+    <form class="form-grid" method="POST">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <label>
+        Role
+        <select name="role" required>
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" placeholder="student@campus.edu" required />
+      </label>
+
+      <label>
+        Password
+        <input type="password" name="password" placeholder="••••••••" required />
+      </label>
+
+      <label>
+        CAPTCHA: {{ captcha_question }}
+        <input type="text" name="captcha" placeholder="Answer" required />
+      </label>
+
+      <button class="btn btn-primary" type="submit">Login</button>
+
+      <div class="hint">
+        New here? <a href="{{ url_for('register') }}">Create a student account</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}

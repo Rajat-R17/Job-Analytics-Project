@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="glass-card auth-card">
+    <div class="card-header">
+      <h1>Create Account</h1>
+      <p>Register as a student to access your attendance dashboard.</p>
+    </div>
+
+    <form class="form-grid" method="POST">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <label>
+        Full Name
+        <input type="text" name="full_name" placeholder="Alex Johnson" required />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" placeholder="alex@campus.edu" required />
+      </label>
+
+      <label>
+        Password
+        <input type="password" name="password" placeholder="Choose a strong password" required />
+      </label>
+
+      <button class="btn btn-primary" type="submit">Register</button>
+
+      <div class="hint">
+        Already registered? <a href="{{ url_for('login') }}">Login</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}

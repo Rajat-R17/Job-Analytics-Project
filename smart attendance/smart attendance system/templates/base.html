@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title or "Student Attendance System" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="bg-blur"></div>
+    <nav class="top-nav">
+      <div class="brand">Student Attendance System</div>
+      <div class="nav-actions">
+        {% if session.get('role') %}
+          <span class="user-chip">{{ session.get('user_name') }}</span>
+          <a class="btn btn-ghost" href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+          <a class="btn btn-ghost" href="{{ url_for('login') }}">Login</a>
+          <a class="btn btn-ghost" href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+      </div>
+    </nav>
+
+    <main class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-wrap">
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
